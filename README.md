@@ -1,4 +1,4 @@
-#Introduction to SASS basics
+# Introduction to SASS basics
 Sass lets you use features that don't exist in CSS. Example- variables, nesting, mixins, inheritance etc. CSS on its own can be fun, but stylesheets are getting larger, more complex, and harder to maintain. This is where a preprocessor like SASS can help.
 
 ## Variables
@@ -24,5 +24,32 @@ body {
   font: arial, sans-serif;
   color: #333;
 }
+```
+
+## Nesting
+Suppose you have a **div** tag which has a class "main-container" and it contains an **h1** tag and a **p** tag, Example :
+```
+<div class="main-container">
+    <h1>I'm Learning Sass</h1>
+    <p>SASS is AWESOME</p>
+</div>
+```
+If we want to target **only** the **h1** and **p** tag that has a parent class named "**main-container**" using only plain CSS, we'd have to do something like this:
+```
+.main-container{
+	background-color: #000;
+ padding: 50px 20px;
+}
+
+.main-container h1{
+  color: #fff;
+  font-size: 32px
+ }
+ 
+ .main-container p{
+  color: #fff;
+  font-size: 28px
+ }
+ 
 ```
 
