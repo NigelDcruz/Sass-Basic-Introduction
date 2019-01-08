@@ -52,4 +52,24 @@ If we want to target **only** the **h1** and **p** tag that has a parent class n
  }
  
 ```
+- Notice that we're repeating the "**.main-container**" class over and over again. In SASS, we can use **Nesting** to avoid repeating it over and over again.
+- The SCSS version of the following is:
+```
+.main-container {
 
+  background-color: #000;
+  padding: 50px 20px;
+  
+  h1 {
+   color: #fff;
+   font-size: 32px
+  }
+  
+  p {
+   color: #fff;
+   font-size: 28px
+  }
+  
+}
+```
+- We just wrap every child element inside the parent class and SCSS takes care of the rest.
