@@ -136,5 +136,39 @@ li.twitter{
 - As you can see, we don't need to repeat the code over and over again.
 - Wherever we need common styles, we can just create and extend a class.
 
+**NOTE: DON'T USE @extend AS SHOWN ABOVE** 
+Why? 
+- Because using @extend duplicates every instance of that selector. 
+- It introduces specificity and inheritance problems and increases your file size.
+
+**Instead, use placeholder selectors/silent classes** because they don't become part of your generated CSS until you extend them.
+
+Placeholder selectors (also called silent classes) begin with a percent symbol **%**
+
+Instead of the above example, you should use @extend the same it's used in the below example:
+```
+%common-styles{
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 50px;
+	width: 50px;
+}
+
+li.facebook{
+	background-image: url('../images/facebook.jpg');
+	@extend %common-styles
+}
+li.instagram{
+	background-image: url('../images/instagram.jpg');
+	@extend %common-styles
+}
+li.twitter{
+	background-image: url('../images/twitter.jpg');
+	@extend %common-styles
+}
+```
+- The only difference is using **%** instead of a **.** before the class name.
+
 
 
