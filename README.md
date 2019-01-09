@@ -73,3 +73,68 @@ If we want to target **only** the **h1** and **p** tag that has a parent class n
 }
 ```
 - We just wrap every child element inside the parent class and SCSS takes care of the rest.
+
+## @extend
+
+This is one of my favorite and one of the most useful features of Sass. It helps you to not repeat your code over and over again.
+
+Now, suppose we have 3 **li** tags. All 3 **li** tags contain a social media background image. 
+Here's how the code looks
+
+```
+li.facebook{
+	background-image: url('../images/facebook.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 50px;
+	width: 50px;
+}
+li.instagram{
+	background-image: url('../images/instagram.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 50px;
+	width: 50px;
+}
+li.twitter{
+	background-image: url('../images/twitter.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 50px;
+	width: 50px;
+}
+
+```
+- If you notice above, we're basically repeating code over and over again. 
+
+Now lets use @extend to avoid code reuse:
+```
+.common-styles{
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 50px;
+	width: 50px;
+}
+
+li.facebook{
+	background-image: url('../images/facebook.jpg');
+	@extend .common-styles
+}
+li.instagram{
+	background-image: url('../images/instagram.jpg');
+	@extend .common-styles
+}
+li.twitter{
+	background-image: url('../images/twitter.jpg');
+	@extend .common-styles
+}
+```
+- As you can see, we don't need to repeat the code over and over again.
+- Wherever we need common styles, we can just create and extend a class.
+
+
+
