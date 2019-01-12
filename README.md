@@ -170,5 +170,23 @@ li.twitter{
 ```
 - The only difference is using **%** instead of a **.** before the class name.
 
+## Partials
+
+So, when we run the compilation command in our scss folder, all our files that end with a **.scss** extension are compiled to a simple **CSS** files. 
+
+- Imagine if we have 3 different scss files-variables.scss, mixins.scss, extends.scss.
+- When we run the compilation command, each of these files will be compiled to variables.css, mixin.css, extend.css. If we have 10 such files, we'll have 10 css files for the same. This is why we have **Partials**.
+
+A partial is simply a **Sass file that has a name starting with an underscore** eg: _variables.scss
+
+- The underscore tells Sass that the file is a partial and that it should not be compiled to CSS.
+- This partial file can then be imported into another file.
+
+So, instead of variables.scss, mixins.scss, and extend.scss we should name them as _variables.scss, _mixins.scss, _extend.scss.
+
+The next section will tell you how to import partials in a single file.
+
+
+
 
 
