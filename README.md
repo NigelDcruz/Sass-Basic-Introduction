@@ -186,6 +186,26 @@ So, instead of variables.scss, mixins.scss, and extend.scss we should name them 
 
 The next section will tell you how to import partials in a single file.
 
+## @import
+
+- Using **@import**, we can import other SASS files in our main .scss file. Using @import combined with partial files, we can avoid generating multiple css files during compilation.
+
+In the above section, we have created _variables.scss, _mixins.scss, _extend.scss. _ _ _
+To Import these files in our main.scss, we simply do the following:
+``` 
+@import './path/FileName'
+```
+
+**Note** that we the .scss extension was not added. This is because SASS is smart enough to figure it out. So we can omit it if we want to.
+
+Since my files are in the same directory, I don't need to specify a path and can directly do the following: 
+```
+@import 'variables'
+@import 'mixins'
+@import 'extend'
+```
+
+That's It. The next step is to have an architecture for your project using partials and @import. There is no fixed structure that works for everyone. We must set up the architecture based on the project requirement.
 
 
 
