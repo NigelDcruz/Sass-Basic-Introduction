@@ -231,4 +231,55 @@ To Solve this issue, we can use **@mixin**.
 - To simplest way to understand Mixins is by thinking them as functions, just like in JavaScript.
 - Basically, you create a function (@mixin), pass a **Parameter** inside that function. That's all you need to know about @mixins to get started.
 
+**Here's how it works:**
+
+1. Lets Create a Mixin:
+```
+@mixin fruit($apple) {
+   -webkit-transform: $apple;
+       -ms-transform: $apple;
+           transform: $apple;
+	}
+```
+2. Here fruit in the **name of the mixin** and $apple is the **parameter** that will be passed inside the function.
+   Note: I'm using silly names so that you don't get confused and understand that these names can be anything.
+   
+```
+// This is how we call the @mixin
+.box {
+	@include fruit(translateX(50%)); 
+}
+
+//Compiled code
+.box {
+-webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+        transform: translateX(50%)
+}
+```
+3. We call the function (@mixin) by using **@include** like in the above example.
+   
+4. Here's a better example
+  ```
+  @mixin transform($property) {
+  -webkit-transform: $property;
+      -ms-transform: $property;
+          transform: $property;
+}
+
+.box {
+   @include transform(rotate(30deg)); 
+  }
+  
+  //Compiled code
+  .box {
+-webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+        transform: rotate(30deg);
+}
+  ```
+
+That's it. There are Endless possibilities of what you can do with mixins and all the basic sections mentioned above.
+
+
 
