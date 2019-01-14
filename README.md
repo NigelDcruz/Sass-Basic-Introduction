@@ -208,5 +208,27 @@ Since my files are in the same directory, I don't need to specify a path and can
 That's It. The next step is to have an architecture for your project using partials and @import. There is no fixed structure that works for everyone. We must set up the architecture based on the project requirement.
 
 
+## @mixin
+
+As you advance in your career, you eventually realize that writing :
+```
+.box{
+  transform: translateX(50%);
+}
+```
+is **not enough**. We need to take care of cross browser compatibility. I.e, we must use vender prefixes like:
+```
+.box {
+-webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+        transform: translateX(50%)
+}
+```
+but prefixing everything over and over again makes the code long and repetitive.
+
+To Solve this issue, we can use **@mixin**.
+
+- To simplest way to understand Mixins is by thinking them as functions, just like in JavaScript.
+- Basically, you create a function (@mixin), pass a **Parameter** inside that function. That's all you need to know about @mixins to get started.
 
 
